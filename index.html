@@ -658,8 +658,71 @@
        target="_blank">
         💬
     </a>
+  <script>
+        // Quantity controls
+        function increaseQuantity(productId) {
+            const qtyElement = document.getElementById(`qty-${productId}`);
+            let currentQty = parseInt(qtyElement.textContent);
+            qtyElement.textContent = currentQty + 1;
+        }
+
+        function decreaseQuantity(productId) {
+            const qtyElement = document.getElementById(`qty-${productId}`);
+            let currentQty = parseInt(qtyElement.textContent);
+            if (currentQty > 1) {
+                qtyElement.textContent = currentQty - 1;
+            }
+        }
+
+        // Add to cart simulation
+        function addToCart(productName, price, productId) {
+            const quantity = parseInt(document.getElementById(`qty-${productId}`).textContent);
+            const total = price * quantity;
+            
+            alert(`¡Agregado al carrito!\n${productName}\nCantidad: ${quantity}\nTotal: S/. ${total.toFixed(2)}`);
+            
+            // Here you would normally send this data to your backend
+            console.log({
+                product: productName,
+                price: price,
+                quantity: quantity,
+                total: total
+            });
+        }
+
+        // Smooth scrolling animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add hover effect to product images
+        document.querySelectorAll('.product-image').forEach(img => {
+            img.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            
+            img.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+    </script>
 </body>
 </html>
+
 
 
 
