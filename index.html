@@ -306,95 +306,88 @@
         }
 
         /* Contact Section */
-        .contact-section {
-            background: #f8f8f8;
-            padding: 60px 20px;
-            text-align: center;
-            margin: 40px 0 0 0;
-        }
+.contact-section {
+    background: #f8f8f8;
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 20px;
+    max-width: 600px;
+    margin: 0 auto 20px auto; /* centrado */
+}
 
-        .contact-title {
-            font-size: 32px;
-            font-weight: 300;
-            letter-spacing: 4px;
-            color: #333;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-        }
+.contact-title {
+    font-size: 32px;
+    font-weight: 300;
+    letter-spacing: 4px;
+    color: #333;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
 
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            max-width: 1000px;
-            margin: 0 auto;
-            align-items: start;
-        }
+.contact-content {
+    margin: 0 auto;
+    max-width: 600px;
+}
 
-        .contact-info {
-            text-align: left;
-        }
+.contact-info h3 {
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: #333;
+    margin-bottom: 25px;
+}
 
-        .contact-info h3 {
-            font-size: 24px;
-            font-weight: 300;
-            letter-spacing: 2px;
-            color: #333;
-            margin-bottom: 25px;
-        }
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
 
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            padding: 15px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
+.contact-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
 
-        .contact-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-        }
+.contact-item i {
+    font-size: 18px;
+    color: #666;
+    margin-right: 15px;
+    width: 25px;
+    text-align: center;
+}
 
-        .contact-item i {
-            font-size: 18px;
-            color: #666;
-            margin-right: 15px;
-            width: 25px;
-            text-align: center;
-        }
+.contact-item span,
+.contact-item a {
+    font-size: 16px;
+    color: #333;
+    font-weight: 300;
+    text-decoration: none;
+}
 
-        .contact-item span {
-            font-size: 16px;
-            color: #333;
-            font-weight: 300;
-        }
+.contact-item a:hover {
+    color: #666;
+}
 
-        .contact-item a {
-            color: #333;
-            text-decoration: none;
-        }
+/* Map */
+.map-container {
+    background: white;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    height: 350px;
+    max-width: 600px;
+    margin: 0 auto 20px auto; /* centrado y con separación */
+}
 
-        .contact-item a:hover {
-            color: #666;
-        }
-
-        .map-container {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            height: 350px;
-        }
-
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
 
         /* Mobile Responsive for Contact */
         @media (max-width: 768px) {
@@ -456,15 +449,14 @@
         }
 
     /* Footer */
-    footer {
-      max-width: 600px;
-      margin: 0 auto 40px auto;
-      background: #333;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-      border-radius: 1px;
-    }
+footer {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #333;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
 
     footer a {
       color: white;
@@ -570,9 +562,9 @@
             </p>
             
             <div class="quantity-controls">
-                <button class="quantity-btn" onclick="decreaseQuantity(4)">-</button>
-                <div class="quantity-display" id="qty-4">1</div>
-                <button class="quantity-btn" onclick="increaseQuantity(4)">+</button>
+                <button class="quantity-btn" onclick="decreaseQuantity(1)">-</button>
+                <div class="quantity-display" id="qty-1">1</div>
+                <button class="quantity-btn" onclick="increaseQuantity(1)">+</button>
             </div>
             
             <p class="price">S/. 35.00 x UND</p>
@@ -595,9 +587,9 @@
             </p>
             
             <div class="quantity-controls">
-                <button class="quantity-btn" onclick="decreaseQuantity(3)">-</button>
-                <div class="quantity-display" id="qty-3">1</div>
-                <button class="quantity-btn" onclick="increaseQuantity(3)">+</button>
+                <button class="quantity-btn" onclick="decreaseQuantity(2)">-</button>
+                <div class="quantity-display" id="qty-2">1</div>
+                <button class="quantity-btn" onclick="increaseQuantity(2)">+</button>
             </div>
             
             <p class="price">S/. 140.00 x 4UND</p>
@@ -645,13 +637,13 @@
             </p>
             
             <div class="quantity-controls">
-                <button class="quantity-btn" onclick="decreaseQuantity(1)">-</button>
-                <div class="quantity-display" id="qty-1">1</div>
-                <button class="quantity-btn" onclick="increaseQuantity(1)">+</button>
+                <button class="quantity-btn" onclick="decreaseQuantity(4)">-</button>
+                <div class="quantity-display" id="qty-4">1</div>
+                <button class="quantity-btn" onclick="increaseQuantity(4)">+</button>
             </div>
             
             <p class="price">S/. 180.00 x UND</p>
-            <a href="#" class="add-to-cart" onclick="addToCart('Cholo Number Guan 750ML', 180.00, 1)">
+            <a href="#" class="add-to-cart" onclick="addToCart('Cholo Number Guan 750ML', 180.00, 4)">
                 Añadir al Carrito
             </a>
         </section>
@@ -670,9 +662,9 @@
             </p>
             
             <div class="quantity-controls">
-                <button class="quantity-btn" onclick="decreaseQuantity(1)">-</button>
-                <div class="quantity-display" id="qty-1">1</div>
-                <button class="quantity-btn" onclick="increaseQuantity(1)">+</button>
+                <button class="quantity-btn" onclick="decreaseQuantity(5)">-</button>
+                <div class="quantity-display" id="qty-5">1</div>
+                <button class="quantity-btn" onclick="increaseQuantity(5)">+</button>
             </div>
             
             <p class="price">S/. 35.00 x UND</p>
@@ -681,7 +673,7 @@
             </a>
         </section>
 
-        <!-- Product 5: DJ Vinagre El Dandy -->
+        <!-- Product 6: DJ Vinagre El Dandy -->
         <section class="product-section fade-in" style="animation-delay: 1s">
             <img src="DJ VINAGRE DANDY (1).jpeg" 
                  alt="DJ Vinagre El Dandy" 
@@ -695,13 +687,13 @@
             </p>
             
             <div class="quantity-controls">
-                <button class="quantity-btn" onclick="decreaseQuantity(1)">-</button>
-                <div class="quantity-display" id="qty-1">1</div>
-                <button class="quantity-btn" onclick="increaseQuantity(1)">+</button>
+                <button class="quantity-btn" onclick="decreaseQuantity(6)">-</button>
+                <div class="quantity-display" id="qty-6">1</div>
+                <button class="quantity-btn" onclick="increaseQuantity(6)">+</button>
             </div>
             
             <p class="price">S/. 120.00 x UND</p>
-            <a href="#" class="add-to-cart" onclick="addToCart('DJ Vinagre El Dandy 4LT', 120.00, 5)">
+            <a href="#" class="add-to-cart" onclick="addToCart('DJ Vinagre El Dandy 4LT', 120.00, 6)">
                 Añadir al Carrito
             </a>
         </section>
@@ -720,9 +712,9 @@
             </p>
             
             <div class="quantity-controls">
-                <button class="quantity-btn" onclick="decreaseQuantity(2)">-</button>
-                <div class="quantity-display" id="qty-2">1</div>
-                <button class="quantity-btn" onclick="increaseQuantity(2)">+</button>
+                <button class="quantity-btn" onclick="decreaseQuantity(7)">-</button>
+                <div class="quantity-display" id="qty-7">1</div>
+                <button class="quantity-btn" onclick="increaseQuantity(7)">+</button>
             </div>
             
             <p class="price">S/. 100.00 x UND</p>
@@ -745,9 +737,9 @@
             </p>
             
             <div class="quantity-controls">
-                <button class="quantity-btn" onclick="decreaseQuantity(3)">-</button>
-                <div class="quantity-display" id="qty-3">1</div>
-                <button class="quantity-btn" onclick="increaseQuantity(3)">+</button>
+                <button class="quantity-btn" onclick="decreaseQuantity(8)">-</button>
+                <div class="quantity-display" id="qty-8">1</div>
+                <button class="quantity-btn" onclick="increaseQuantity(8)">+</button>
             </div>
             
             <p class="price">S/. 100.00 x UND</p>
@@ -770,9 +762,9 @@
             </p>
             
             <div class="quantity-controls">
-                <button class="quantity-btn" onclick="decreaseQuantity(4)">-</button>
-                <div class="quantity-display" id="qty-4">1</div>
-                <button class="quantity-btn" onclick="increaseQuantity(4)">+</button>
+                <button class="quantity-btn" onclick="decreaseQuantity(9)">-</button>
+                <div class="quantity-display" id="qty-9">1</div>
+                <button class="quantity-btn" onclick="increaseQuantity(9)">+</button>
             </div>
             
             <p class="price">S/. 100.00 x UND</p>
@@ -795,9 +787,9 @@
             </p>
             
             <div class="quantity-controls">
-                <button class="quantity-btn" onclick="decreaseQuantity(2)">-</button>
-                <div class="quantity-display" id="qty-2">1</div>
-                <button class="quantity-btn" onclick="increaseQuantity(2)">+</button>
+                <button class="quantity-btn" onclick="decreaseQuantity(10)">-</button>
+                <div class="quantity-display" id="qty-10">1</div>
+                <button class="quantity-btn" onclick="increaseQuantity(10)">+</button>
             </div>
             
             <p class="price">S/. 40.00 x UND</p>
@@ -827,25 +819,13 @@
                 </div>
                 
                 <div class="contact-item">
-                    <i class="fab fa-whatsapp"></i>
-                    <a href="https://wa.me/51991198681?text=Hola!%20Me%20gustaría%20realizar%20un%20pedido." target="_blank">
-                        <span>WhatsApp: +51 991 198 681</span>
-                    </a>
-                </div>
-                
-                <div class="contact-item">
-                    <i class="fab fa-instagram"></i>
-                    <a href="https://www.instagram.com/chakupe_gran_despensa_mochica?igsh=MWx1a2N4ZTA1NXZi" target="_blank">
-                        <span></span>
-                    </a>
-                </div>
-                
-                <div class="contact-item">
                     <i class="fas fa-clock"></i>
                     <span>Lunes a Domingo: 9:00 AM - 6:00 PM</span>
                 </div>
             </div>
-            
+            </section>
+
+            <section class="map-container">
             <div class="map-container">
                 <iframe 
                     src="https://www.google.com/maps/place/Sta.+Rosa+389,+Surquillo+15047/@-12.1176529,-77.0262169,16.25z/data=!4m10!1m2!2m1!1s389+Sta.+Rosa,%C2%A0Lima,+Provincia+de+Lima!3m6!1s0x9105c81044d6a2e3:0xb61b78797a2806e!8m2!3d-12.1168893!4d-77.0240163!15sCikzODkgU2FudGEuIFJvc2EswqBMaW1hLCBQcm92aW5jaWEgZGUgTGltYZIBCnN1YnByZW1pc2XgAQA!16s%2Fg%2F11j1lk1cn7?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D"
@@ -854,9 +834,9 @@
                     referrerpolicy="no-referrer-when-downgrade"
                     title="Ubicación de La Picantería">
                 </iframe>
-            </div>
-        </div>
-    </section>
+            
+        </section>
+    </div>
 
    <!-- Footer -->
   <footer>
