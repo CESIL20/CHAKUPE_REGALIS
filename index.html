@@ -80,6 +80,37 @@
             color: #666;
             font-weight: 300;
         }
+        /* ----- BOTÓN HAMBURGUESA ----- */
+.hamburger {
+  display: flex; /* oculto en escritorio */
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 120px;
+  left: 10px;
+  z-index: 1200;
+}
+
+.hamburger span {
+  width: 20px;
+  height: 3px;
+  background: rgb(184, 182, 182);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+/* ----- Animación hamburguesa a X ----- */
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+
 
         /* Main Content */
         .main-content {
@@ -178,14 +209,14 @@
         .product-description {
             font-size: 16px;
             line-height: 1.8;
-            font-weight: 300;
+            font-weight: 200;
             max-width: 500px;
             margin: 0 auto 20px;
         }
 
         .price {
             font-size: 28px;
-            font-weight: 400;
+            font-weight: 300;
             margin-top: 20px;
             color: #666; /* Color sobrio gris */
         }
@@ -198,7 +229,7 @@
             border: none;
             border-radius: 25px;
             font-size: 14px;
-            font-weight: 500;
+            font-weight: 400;
             letter-spacing: 1px;
             text-transform: uppercase;
             text-decoration: none;
@@ -410,7 +441,6 @@
             .brand-name {
                 font-size: 32px;
                 letter-spacing: 4px;
-              
             }
             .brand-tagline {
                 font-size: 0.4em;
@@ -418,7 +448,6 @@
                 color: #666;
                 font-weight: 300;
             }
-            
             .main-title {
                 font-size: 28px;
                 letter-spacing: 4px;
@@ -434,7 +463,7 @@
                 letter-spacing: 2px;
             }
             
-           .decorative-left{
+            .decorative-left{
                 display: flex;
                 left: 5px;
                 top:70px;
@@ -446,7 +475,7 @@
                 top:70px;
             }
 
-
+     
             .whatsapp-float {
                 bottom: 20px;
                 right: 20px;
@@ -454,8 +483,7 @@
                 height: 50px;
                 font-size: 24px;
             }
-        }
-
+            }
     /* Footer */
 footer {
     max-width: 600px;
@@ -532,7 +560,13 @@ footer {
         <h1 class="brand-name">CHAKUPE</h1>
         <p class="brand-tagline">L A  G R A N  D E S P E N S A  M O C H E</p>
       </div>
-    </header>
+     <!-- Botón hamburguesa -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+      </header>
 
     <!-- Main Content -->
     <main class="main-content">
@@ -682,7 +716,7 @@ footer {
                  alt="DJ Vinagre El Dandy" 
                  class="product-image">
                  
-            <h4 class="product-title">DJ Vinagre El Dandy 4LTS</h4>
+            <h4 class="product-title">DJ Vinagre El Dandy 4LT</h4>
             <p class="product-description">
                 Un producto premium de excepcional calidad, elaborado con los mejores 
                 ingredientes siguiendo métodos tradicionales. Su sabor suave y 
@@ -707,7 +741,7 @@ footer {
                  alt="DJ Jora Natural" 
                  class="product-image">
                  
-            <h4 class="product-title">DJ Jora Natural 4LTS</h4>
+            <h4 class="product-title">DJ Jora Natural 4LT</h4>
             <p class="product-description">
                 Elaborado con ingredientes naturales selectos, este producto destaca 
                 por su pureza y sabor auténtico. Una experiencia única que 
@@ -732,7 +766,7 @@ footer {
                  alt="DJ Jora Membrillo" 
                  class="product-image">
                  
-            <h4 class="product-title">DJ Jora Membrillo 4LTS</h4>
+            <h4 class="product-title">DJ Jora Membrillo 4LT</h4>
             <p class="product-description">
                 Una deliciosa fusión entre ingredientes tradicionales y el dulce sabor 
                 del membrillo. Su aroma frutal y sabor equilibrado lo convierten 
@@ -799,6 +833,31 @@ footer {
             <a href="#" class="add-to-cart" onclick="addToCart('Loche', 40.00, 10)">
                 Añadir al Carrito
             </a>
+        </section> 
+
+        <!-- Product 11: Chinguirito -->
+        <section class="product-section fade-in" style="animation-delay: 1.2s">
+            <img src="chinguirito.jpg" 
+                 alt="Loche" 
+                 class="product-image">
+                 
+            <h4 class="product-title">Chinguirito kg</h4>
+            <p class="product-description">
+                Elaborado con ingredientes naturales selectos, este producto destaca 
+                por su pureza y sabor auténtico. Una experiencia única que 
+                representa lo mejor de la tradición culinaria peruana.
+            </p>
+            
+            <div class="quantity-controls">
+                <button class="quantity-btn" onclick="decreaseQuantity(11)">-</button>
+                <div class="quantity-display" id="qty-11">1</div>
+                <button class="quantity-btn" onclick="increaseQuantity(11)">+</button>
+            </div>
+            
+            <p class="price">S/. 40.00</p>
+            <a href="#" class="add-to-cart" onclick="addToCart('Chinguirito', 40.00, 10)">
+                Añadir al Carrito
+            </a>
         </section>
         </div>
 
@@ -830,15 +889,10 @@ footer {
 
             <section class="map-container">
             <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.9308475030693!2d-77.02659122618198!3d-12.116884043207714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c81044d6a2e3%3A0xb61b78797a2806e!2sSta.%20Rosa%20389%2C%20Surquillo%2015047!5e0!3m2!1ses!2spe!4v1758899021316!5m2!1ses!2spe" 
-                  width="600" 
-                  height="450" 
-                  style="border:0;" 
-                  allowfullscreen="" loading="lazy" 
-                  referrerpolicy="no-referrer-when-downgrade">
-                 </iframe>
-            </section>
-            </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.9308475030693!2d-77.02659122618198!3d-12.116884043207714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c81044d6a2e3%3A0xb61b78797a2806e!2sSta.%20Rosa%20389%2C%20Surquillo%2015047!5e0!3m2!1ses!2spe!4v1758899021316!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            
+        </section>
+    </div>
 
    <!-- Footer -->
   <footer>
@@ -911,6 +965,17 @@ footer {
             observer.observe(el);
         });
 
+         // --- BOTON HAMBURGUESA ---
+    const hamburger = document.getElementById("hamburger");
+    const menu = document.getElementById("menu");
+
+    if (hamburger && menu) {
+        hamburger.addEventListener("click", () => {
+            menu.classList.toggle("active");
+            hamburger.classList.toggle("open");
+        });
+    }
+
         // Add hover effect to product images
         document.querySelectorAll('.product-image').forEach(img => {
             img.addEventListener('mouseenter', function() {
@@ -925,12 +990,3 @@ footer {
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
